@@ -1,20 +1,18 @@
 class Brick {
   
-  constructor(x, y, r, g, b) {
+  constructor(x, y, c) {
     this.x = x;
     this.y = y;
     this.width = 50;
     this.height = 20;
-    this.visible = true;
-    this.r = r;
-    this.g = g;
-    this.b = b;
+    this.exists = true;
+    this.c = c;
   }
 
   display() {
     stroke(0);
     strokeWeight(2);
-    fill(this.r, this.g, this.b);
+    fill(this.c);
     rect(this.x, this.y, this.width, this.height);
   }
 }

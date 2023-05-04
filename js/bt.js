@@ -1,12 +1,14 @@
 const width = 800;
 const height = 800;
+const col = ["red", "yellow", "royalblue", "magenta", "lawngreen", "cyan"];
+const numWalls = 6;
 
-let brick = [];
-
-for(let i = 0; i < 16; i++) {
-  brick[i] = new Brick(i * 50, 180, 255, 0, 0);
+let wall = [];
+for(let i = 0; i < numWalls; i++) {
+  wall[i] = new Wall(i, col[i]);
 }
-let ball = new Ball(100, 100, 26, true, true, 5, 3);
+
+let ball = new Ball(100, 100, 26, true, true, 7, 5);
 
 function setup() {
   createCanvas(width, height);
@@ -14,10 +16,10 @@ function setup() {
 
 function draw() {
   background(0);
-  for(let i = 0; i < 16; i++) {
-    brick[i].display();
+
+  for(let i = 0; i < numWalls; i++) {
+    wall[i].display();
   }
   ball.display();
   ball.move();
-  // console.log(ball.getPos());
 }
