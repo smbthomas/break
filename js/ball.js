@@ -1,83 +1,40 @@
-// Animated ball program using the p5.js library
-// Copyright (c) Stephen Martin Beynon Thomas, April 2023
-
-let x = 100;
-let y = 300;
-let xSpeed = 7;
-let ySpeed = 5;
-let down = true;
-let right = true;
-let dia = 26;
-let rad = dia / 2;
-let width = 800;
-let height = 800;
-
-let count = 0;
-let coords = [];
-for(i = 0; i < 16; i++) {
-  for(j = 0; j < 50; j++) {
-    coords[count] = i;
-    count++;
+class Ball {
+  
+  constructor(x, y, d, right, down, xs, ys) {
+    this.x = x;
+    this.y = y;
+    this.d = d;
+    this.right = right;
+    this.down = down;
+    this.xs = xs;
+    this.ys = ys;
   }
-}
-
-let rows = [[true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-            [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-            [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-            [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-            [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-            [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-            [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]];
-
-console.log(coords);
-
-function setup() {
-  createCanvas(width, height);
-}
-
-function draw() {
-  background(0);
-  strokeWeight(2);
-  bricks(60, 0, 0, 255);
-  bricks(80, 0, 255, 255);
-  bricks(100, 0, 255, 0);
-  bricks(120, 255, 255, 0);
-  bricks(140, 255, 0, 0);
-  bricks(160, 255, 165, 0);
-  bricks(180, 150, 0, 150);
-  fill(200, 200, 200);
-  circle(0 + x, 0 + y, dia, dia);
-  if (right) 
-    x += xSpeed;
-  else
-    x -= xSpeed;
-  if (x > (width - rad)) right = false;
-  if (x < (0 + rad)) right = true;
-  // console.log(x);
-  if (down) 
-    y += ySpeed;
-  else
-    y -= ySpeed;
-  if (y > (height - rad)) down = false;
-  if (y < (200 + rad)) {
-    down = true;
-    console.log("x = ", x);
-    console.log("b = ", getBrickNum(x));
-    rows[0][getBrickNum(x)] = false;
+  
+  move() {
+    let rad = this.d / 2;
+    if (this.right) 
+      this.x += this.xs;
+    else
+      this.x -= this.xs;
+    if (this.x > (width - rad)) this.right = false;
+    if (this.x < (0 + rad)) this.right = true;
+    if (this.down) 
+      this.y += this.ys;
+    else
+      this.y -= this.ys;
+    if (this.y > (height - rad)) this.down = false;
+    if (this.y < (200 + rad)) {
+      this.down = true;
+    }
   }
-}
-
-function bricks(ypos, rcol, gcol , bcol) {
-  let xpos = 0;
-  // noStroke();
-  fill(rcol, gcol, bcol);
-  for (i = 0; i < 16; i++) {
-    if (rows[0][i])
-      rect(xpos, ypos, 50, 20);
-    xpos += 50;
+  
+  getPos() {
+    return Math.floor(this.x / 50);
   }
-}
-
-function getBrickNum(x) {
-  return coords[x];
+  
+  display() {
+    fill(200, 200, 200);
+    strokeWeight(0);
+    circle(this.x, this.y, this.d);
+  }
 }
