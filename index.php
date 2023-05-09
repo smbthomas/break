@@ -20,7 +20,7 @@
 <?php
 $month_year =  date('F, Y');
 $year = date('Y');
-echo "Copyright &copy; Stephen Martin Thomas " . $month_year  . ".\n";
+echo "Copyright &copy; Stephen Martin Beynon Thomas " . $month_year  . ".\n";
 ?>
 </div>
 </div>
