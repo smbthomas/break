@@ -13,8 +13,11 @@
 <div id="grid-container">
 <div id="grid-header">
 <h1>Breakout</h1>
+<p>The game of 'Breakout' using the <a href="https://p5js.org">p5<sub>*</sub>js</a> JavaScript library. Still under development.</p>
 </div><!-- grid-header -->
 <div id="grid-content">
+</div>
+<div id="grid-info">
 </div>
 <div id="grid-footer">
 <?php
@@ -28,7 +31,8 @@ echo "Copyright &copy; Stephen Martin Beynon Thomas " . $month_year  . ".\n";
 <script src="js/p5.min.js"></script>
 <script src="js/brick.js"></script>
 <script src="js/wall.js"></script>
+<script src="js/bat.js"></script>
 <script src="js/ball.js"></script>
-<script src="js/bt.js"></script>
+<script src="js/break.js"></script>
 </body>
 </html>
