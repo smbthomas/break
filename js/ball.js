@@ -56,6 +56,14 @@ class Ball {
     }
   }
   
+  findLeftWall() {
+    
+  }
+  
+  findRightWall() {
+    
+  }
+  
   display() {
     fill(220);
     strokeWeight(0);
