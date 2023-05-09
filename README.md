@@ -1,2 +1,2 @@
-# p5
-Web pages using the p5.js library.
+# break
+Breakout game using the p5.js library.
