@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Breakthrough Test Page</title>
+<title>Breakout</title>
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="shortcut icon" href="favicon.ico">
 </head>
@@ -41,4 +41,8 @@ echo "Copyright &copy; Stephen Martin Beynon Thomas " . $month_year  . ".\n";
 <script src="js/ball.js"></script>
 <script src="js/break.js"></script>
 </body>
+<!--
+ Breakout game using JavaScript classes
+ Copyright (c) Stephen Martin Beynon Thomas, May 2023
+-->
 </html>
