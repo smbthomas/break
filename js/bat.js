@@ -1,3 +1,9 @@
+/*
+ Breakout game using JavaScript classes
+ Copyright (c) Stephen Martin Beynon Thomas, May 2023
+
+ */
+
 class Bat {
   
   constructor(x) {

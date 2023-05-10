@@ -1,3 +1,9 @@
+/*
+ Breakout game using JavaScript classes
+ Copyright (c) Stephen Martin Beynon Thomas, May 2023
+
+ */
+
 class Ball {
   
   constructor(x, y, d, right, down, xs, ys) {
