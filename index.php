@@ -18,6 +18,12 @@
 <div id="grid-content">
 </div>
 <div id="grid-info">
+<div id="x">x = 0</div>
+<div id="y">y = 0</div>
+<div id="xs">xs = 0</div>
+<div id="ys">ys = 0</div>
+<div id="xpos">xpos = 0</div>
+<div id="ypos">ypos = 0</div>
 </div>
 <div id="grid-footer">
 <?php

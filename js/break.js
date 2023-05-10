@@ -16,7 +16,7 @@ for(let i = 0; i < numWalls; i++) {
   wall[i] = new Wall(i, col[i]);
 }
 
-let ball = new Ball(100, 300, 26, true, true, 3, 4);
+let ball = new Ball(100, 300, 26, true, true, 1, 3);
 let bat = new Bat(350);
 
 function setup() {
@@ -30,6 +30,7 @@ function draw() {
     wall[i].display();
   }
   ball.display();
+  ball.report();
   bat.display();
   ball.move();
 }

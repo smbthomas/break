@@ -8,6 +8,8 @@ class Ball {
     this.down = down;
     this.xs = xs;
     this.ys = ys;
+    this.xpos = 0;
+    this.ypos = 0;
   }
   
   move() {
@@ -25,36 +27,46 @@ class Ball {
     if (this.y > (height - rad)) {
       this.down = false;
     }
-    let xpos = Math.floor(this.x / 50);
-    let ypos = 0;
-    switch(ceiling[xpos]) {
+    this.xpos = Math.floor(this.x / 50);
+    this.ypos = 0;
+    switch(ceiling[this.xpos]) {
     case 200:
-      ypos = 0;
+      this.ypos = 0;
     break;
     case 180:
-      ypos = 1;
+      this.ypos = 1;
     break;
     case 160:
-      ypos = 2;
+      this.ypos = 2;
     break;
     case 140:
-      ypos = 3;
+      this.ypos = 3;
     break;
     case 120:
-      ypos = 4;
+      this.ypos = 4;
     break;
     case 100:
-      ypos = 5;
+      this.ypos = 5;
     break;
     default:
-      ypos = 6;
+      this.ypos = 6;
     }
-    if (this.y < (ceiling[xpos] + rad)) {
+    if (this.y < (ceiling[this.xpos] + rad)) {
       this.down = true;
-      wall[ypos].brick[xpos].exists = false;
-      ceiling[xpos] -= 20;
+      wall[this.ypos].brick[this.xpos].exists = false;
+      ceiling[this.xpos] -= 20;
     }
   }
+  
+  report() {
+    document.getElementById('x').innerHTML = 'x = ' + this.x;
+    document.getElementById('y').innerHTML = 'y = ' + this.y;
+    document.getElementById('xs').innerHTML = 'xs = ' + this.xs;
+    document.getElementById('ys').innerHTML = 'ys = ' + this.ys;
+    document.getElementById('xpos').innerHTML = 'xpos = ' + this.xpos;
+    document.getElementById('ypos').innerHTML = 'ypos = ' + this.ypos;
+  }
+  
   
   findLeftWall() {
     
